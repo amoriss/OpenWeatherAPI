@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "dMv8Iw0ZFytZfHs17x4aSioezRM5nYzbKwCFjpKFWSeFX5lJGeMnr7bKve737Gl5glfyo8SgpdTAy5eLcJGsfQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\amori\\repos\\OpenWeatherAPI\\OpenWeatherAPI\\OpenWeatherAPI.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\amori\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}
