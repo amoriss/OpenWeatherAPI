@@ -11,7 +11,7 @@ namespace OpenWeatherAPI
             //Console.WriteLine("Hello World!");
             var client = new HttpClient();
             //Console.WriteLine("Please enter your API key:");
-            var apiKey = "4d732ddc83b81b6951094c4a0b8a08c2";
+            var apiKey = Environment.GetEnvironmentVariable("WEATHER_API_KEY");
 
 
             while (true)
