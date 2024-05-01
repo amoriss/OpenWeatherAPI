@@ -46,9 +46,10 @@ C:\Users\amori\Original\OpenWeatherAPI\OpenWeatherAPI\obj\Debug\net5.0\OpenWeath
 C:\Users\amori\Original\OpenWeatherAPI\OpenWeatherAPI\obj\Debug\net5.0\OpenWeatherAPI.AssemblyInfoInputs.cache
 C:\Users\amori\Original\OpenWeatherAPI\OpenWeatherAPI\obj\Debug\net5.0\OpenWeatherAPI.AssemblyInfo.cs
 C:\Users\amori\Original\OpenWeatherAPI\OpenWeatherAPI\obj\Debug\net5.0\OpenWeatherAPI.csproj.CoreCompileInputs.cache
-C:\Users\amori\Original\OpenWeatherAPI\OpenWeatherAPI\obj\Debug\net5.0\OpenWeatherAPI.csproj.CopyComplete
 C:\Users\amori\Original\OpenWeatherAPI\OpenWeatherAPI\obj\Debug\net5.0\OpenWeatherAPI.dll
 C:\Users\amori\Original\OpenWeatherAPI\OpenWeatherAPI\obj\Debug\net5.0\refint\OpenWeatherAPI.dll
 C:\Users\amori\Original\OpenWeatherAPI\OpenWeatherAPI\obj\Debug\net5.0\OpenWeatherAPI.pdb
 C:\Users\amori\Original\OpenWeatherAPI\OpenWeatherAPI\obj\Debug\net5.0\OpenWeatherAPI.genruntimeconfig.cache
 C:\Users\amori\Original\OpenWeatherAPI\OpenWeatherAPI\obj\Debug\net5.0\ref\OpenWeatherAPI.dll
+C:\Users\amori\Original\OpenWeatherAPI\OpenWeatherAPI\obj\Debug\net5.0\OpenWeatherAPI.sourcelink.json
+C:\Users\amori\Original\OpenWeatherAPI\OpenWeatherAPI\obj\Debug\net5.0\OpenWeat.127BB8B7.Up2Date
