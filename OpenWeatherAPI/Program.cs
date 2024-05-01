@@ -8,32 +8,10 @@ namespace OpenWeatherAPI
     {
         static void Main(string[] args)
         {
-            //Console.WriteLine("Hello World!");
-            var client = new HttpClient();
-            //Console.WriteLine("Please enter your API key:");
-            var apiKey = Environment.GetEnvironmentVariable("WEATHER_API_KEY");
 
+            var weather = new WeatherApiClient();
+            weather.DisplayWeatherData();
 
-            while (true)
-            {
-
-                Console.WriteLine();
-                Console.WriteLine("Please enter the city name:");
-                var cityName = Console.ReadLine();
-                var weatherURL = $"http://api.openweathermap.org/data/2.5/weather?q={cityName}&units=imperial&appid={apiKey}";
-
-                var response = client.GetStringAsync(weatherURL).Result;
-                var formattedResponse = JObject.Parse(response).GetValue("main").ToString();
-                Console.WriteLine(formattedResponse);
-                Console.WriteLine();
-                Console.WriteLine("Would you like to enter a different city?");
-                var userInput = Console.ReadLine();
-                if (userInput.ToLower() == "no" || userInput.ToLower() == "n")
-                {
-                    break; 
-                }
-
-            }
         }
     }
 }
