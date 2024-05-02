@@ -7,36 +7,23 @@ namespace OpenWeatherAPI;
 public class WeatherApiClient
 {
     private readonly HttpClient _client;
+    private readonly string _apiKey;
 
-    public WeatherApiClient()
+    public WeatherApiClient(string apiKey)
     {
         _client = new HttpClient();
+        _apiKey = apiKey;
     }
 
-    public void DisplayWeatherData()
+    public string GetWeatherRequest(string cityName)
     {
-        var apiKey = Environment.GetEnvironmentVariable("WEATHER_API_KEY");
-
-
-        while (true)
-        {
-
-            Console.WriteLine();
-            Console.WriteLine("Please enter the city name:");
-            var cityName = Console.ReadLine();
-            var weatherURL = $"http://api.openweathermap.org/data/2.5/weather?q={cityName}&units=imperial&appid={apiKey}";
-            
-            var response = _client.GetStringAsync(weatherURL).Result;
-            var formattedResponse = JObject.Parse(response).GetValue("main").ToString();
-            Console.WriteLine(formattedResponse);
-            Console.WriteLine();
-            Console.WriteLine("Would you like to enter a different city?");
-            var userInput = Console.ReadLine();
-            if (userInput.ToLower() == "no" || userInput.ToLower() == "n")
-            {
-                break; 
-            }
-
-        }
+       //API endpoint
+        var weatherURL = $"http://api.openweathermap.org/data/2.5/weather?q={cityName}&units=imperial&appid={_apiKey}";
+        
+        //get response as a string
+        var response = _client.GetStringAsync(weatherURL).Result;
+        
+        //return weather response as a string
+        return response;
     }
 }

@@ -8,9 +8,11 @@ namespace OpenWeatherAPI
     {
         static void Main(string[] args)
         {
-
-            var weather = new WeatherApiClient();
-            weather.DisplayWeatherData();
+            //API key from environment variable
+            var apiKey = Environment.GetEnvironmentVariable("WEATHER_API_KEY");
+            var weatherClient = new WeatherApiClient(apiKey);
+            var weatherService = new WeatherService(weatherClient);
+            weatherService.DisplayWeatherData();
 
         }
     }
