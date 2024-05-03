@@ -12,9 +12,9 @@ public class WeatherService
         _apiClient = apiClient;
     }
 
-    public void DisplayWeatherData()
+    public void DisplayWeatherData(string cityName)
     {
-        var response = _apiClient.GetWeatherRequest("London");
+        var response = _apiClient.GetWeatherRequest(cityName);
         var formattedResponse = JObject.Parse(response).GetValue("main").ToString();
         Console.WriteLine(formattedResponse);
     }

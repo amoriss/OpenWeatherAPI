@@ -10,9 +10,30 @@ namespace OpenWeatherAPI
         {
             //API key from environment variable
             var apiKey = Environment.GetEnvironmentVariable("WEATHER_API_KEY");
+            
+            //pass API key to the WeatherAPIClient
             var weatherClient = new WeatherApiClient(apiKey);
+            
+            //create instance of WeatherService while passing in the API key and Client through the constructor
             var weatherService = new WeatherService(weatherClient);
-            weatherService.DisplayWeatherData();
+           
+            //create instance of UserInputService class
+            var userInputService = new UserInputService();
+            
+            //call GetCityName method
+            string cityName = userInputService.GetCityName();
+            
+            //use city name from user input to call method to display weather info
+            weatherService.DisplayWeatherData(cityName);
+            
+            //ask user if the want to enter in another city to check for weather
+            string additionalAnswer = userInputService.AskForAnotherCity();
+            if (additionalAnswer == "y" || additionalAnswer == "yes")
+            {
+                cityName = userInputService.GetCityName();
+                weatherService.DisplayWeatherData(cityName);
+            }
+            
 
         }
     }
