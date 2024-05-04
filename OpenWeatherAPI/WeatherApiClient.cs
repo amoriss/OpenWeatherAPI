@@ -1,5 +1,6 @@
 ﻿using System.Net.Http;
 using System;
+using System.Threading.Tasks;
 using Newtonsoft.Json.Linq;
 
 namespace OpenWeatherAPI;
@@ -15,13 +16,13 @@ public class WeatherApiClient
         _apiKey = apiKey;
     }
 
-    public string GetWeatherRequest(string cityName)
+    public async Task<string> GetWeatherRequest(string cityName)
     {
        //API endpoint
-        var weatherURL = $"http://api.openweathermap.org/data/2.5/weather?q={cityName}&units=imperial&appid={_apiKey}";
+        var weatherUrl = $"http://api.openweathermap.org/data/2.5/weather?q={cityName}&units=imperial&appid={_apiKey}";
         
         //get response as a string
-        var response = _client.GetStringAsync(weatherURL).Result;
+        var response = await _client.GetStringAsync(weatherUrl);
         
         //return weather response as a string
         return response;

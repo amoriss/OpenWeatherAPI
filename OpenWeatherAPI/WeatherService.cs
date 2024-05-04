@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Threading.Tasks;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
 namespace OpenWeatherAPI;
@@ -12,10 +14,15 @@ public class WeatherService
         _apiClient = apiClient;
     }
 
-    public void DisplayWeatherData(string cityName)
+    public async Task<Root> DisplayWeatherData(string cityName)
     {
-        var response = _apiClient.GetWeatherRequest(cityName);
-        var formattedResponse = JObject.Parse(response).GetValue("main").ToString();
-        Console.WriteLine(formattedResponse);
+        var response = await _apiClient.GetWeatherRequest(cityName);
+        if (response != null)
+        {
+            Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(response);
+            return myDeserializedClass;
+        }
+
+        return null;
     }
 }

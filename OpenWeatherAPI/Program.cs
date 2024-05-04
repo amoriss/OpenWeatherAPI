@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Net.Http;
 using Newtonsoft.Json.Linq;
+using System.Threading.Tasks;
 
 namespace OpenWeatherAPI
 {
     class Program
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
             //API key from environment variable
             var apiKey = Environment.GetEnvironmentVariable("WEATHER_API_KEY");
@@ -24,14 +25,16 @@ namespace OpenWeatherAPI
             string cityName = userInputService.GetCityName();
             
             //use city name from user input to call method to display weather info
-            weatherService.DisplayWeatherData(cityName);
+            var data = await weatherService.DisplayWeatherData(cityName);
+            Console.WriteLine(data.Main.Temp);
             
             //ask user if the want to enter in another city to check for weather
             string additionalAnswer = userInputService.AskForAnotherCity();
-            if (additionalAnswer == "y" || additionalAnswer == "yes")
+            while (additionalAnswer == "y" || additionalAnswer == "yes")
             {
                 cityName = userInputService.GetCityName();
                 weatherService.DisplayWeatherData(cityName);
+                additionalAnswer = userInputService.AskForAnotherCity();
             }
             
 
