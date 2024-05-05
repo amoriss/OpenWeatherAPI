@@ -5,7 +5,7 @@ using Newtonsoft.Json.Linq;
 
 namespace OpenWeatherAPI;
 
-public class WeatherApiClient
+public class WeatherApiClient //handles API communication and receives raw data
 {
     private readonly HttpClient _client;
     private readonly string _apiKey;
